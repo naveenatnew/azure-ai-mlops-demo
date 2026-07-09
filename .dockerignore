@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+
+# Git
+.git/
+.github/
+
+# IDE
+.vscode/
+.idea/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment
+.env
+
+# Local artifacts
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep the training dataset out of the runtime image
+ml/dataset.csv
