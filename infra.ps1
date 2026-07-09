@@ -43,9 +43,3 @@ $identity = "github-oidc-identity"
 #     --subject "repo:naveenatnew/azure-ai-mlops-demo:ref:refs/heads/main" `
 #     --audiences "api://AzureADTokenExchange"
 
-# kubectl create secret docker-registry ghcr-secret `
-#   --docker-server=ghcr.io `
-#   --docker-username=naveenatnew `
-#
-#   --docker-email=your-email@example.com `
-#   --namespace ai-mlops
