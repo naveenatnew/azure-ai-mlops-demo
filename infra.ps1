@@ -35,10 +35,17 @@ $identity = "github-oidc-identity"
 #     --role "Azure Kubernetes Service Cluster User Role" `
 #     --scope $AKS_ID
 
-az identity federated-credential create `
-    --resource-group $rg `
-    --identity-name $identity `
-    --name github-main `
-    --issuer "https://token.actions.githubusercontent.com" `
-    --subject "repo:naveenatnew/azure-ai-mlops-demo:ref:refs/heads/main" `
-    --audiences "api://AzureADTokenExchange"
+# az identity federated-credential create `
+#     --resource-group $rg `
+#     --identity-name $identity `
+#     --name github-main `
+#     --issuer "https://token.actions.githubusercontent.com" `
+#     --subject "repo:naveenatnew/azure-ai-mlops-demo:ref:refs/heads/main" `
+#     --audiences "api://AzureADTokenExchange"
+
+# kubectl create secret docker-registry ghcr-secret `
+#   --docker-server=ghcr.io `
+#   --docker-username=naveenatnew `
+#
+#   --docker-email=your-email@example.com `
+#   --namespace ai-mlops

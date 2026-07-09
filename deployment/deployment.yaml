@@ -25,7 +25,8 @@ spec:
         app: wine-api
 
     spec:
-
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
 
       - name: wine-api
