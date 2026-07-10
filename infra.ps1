@@ -34,13 +34,13 @@ $aksId = az aks show `
     --query id `
     --output tsv
 
-$principalId =az identity show `
+$clientId =az identity show `
     --name $identity `
     --resource-group $rg `
-    --query principalId
+    --query clientId
 
 az role assignment create `
-    --assignee $principalId `
+    --assignee $clientId `
     --role "Azure Kubernetes Service Cluster User Role" `
     --scope $aksId
 
@@ -52,3 +52,7 @@ az identity federated-credential create `
     --subject $repo `
     --audiences "api://AzureADTokenExchange"
 
+# Display clientId, subscription ID and tenant ID, Add these manually in GitHub secrets of the above repo.
+Write-Host "Client ID: $clientId"
+Write-Host "Subscription ID: $(az account show --query id --output tsv)"
+Write-Host "Tenant ID: $(az account show --query tenantId --output tsv)"
